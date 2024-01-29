@@ -1,0 +1,17 @@
+<h2>Página principal</h2>
+<!-- Si la variable identificado está true pasa a then 
+y carga la template siIdentificado.
+si es false carga la template noIdentificado  -->
+<div *ngIf="identificado; then siIdentificado else noIdentificado"></div>
+
+<ng-template #siIdentificado>
+    <!--Con la almohadilla # podemos crear variables dentro de una plantilla, dentro de la vista-->
+    <h3>Estas identificado en la aplicación</h3>
+    <button (click)="setIdentificado()">Salir de Identificación</button>
+</ng-template>
+
+<ng-template #noIdentificado>
+<!--Con la almohadilla # podemos crear variables dentro de una plantilla, dentro de la vista-->
+    <p>NO estas identificado, pulsa este botón para identificarse</p>
+    <button (click)="unsetIdentificado()">Identificate</button>
+</ng-template>
